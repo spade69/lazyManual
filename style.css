@@ -1,0 +1,24 @@
+body{
+	font-size:11pt;
+	line-height:200%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width: 100%;
+}
+h4{
+	color: #008080;
+}
+img{
+	display: block;
+	margin:0 auto;	
+}
+.fix{
+	width:321px;
+}
+.diff{
+	width:450px;
+}
+div{
+	padding: 10px 0;
+}
