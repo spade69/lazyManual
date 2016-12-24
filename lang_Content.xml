@@ -1,0 +1,177 @@
+<content>
+    <type>
+        <zh>zh</zh>
+        <en>en</en>
+    </type>
+    <text id="head">
+        <zh>Balight APP 新手指南</zh>
+        <en>Balight APP User Guide</en>
+        <DD>ASDASDASD</DD>
+    </text>
+    <text id="tips">
+        <zh>感謝您購買使用Balight，以下將詳細介紹Balight APP的各種特色功能，請參考下列說明開始請盡情的玩圖吧！</zh>
+        <en>Thank you for choosing Balight. This Balight APP User Guide will provide detailed descriptions to your using Balight in its full features. Please enjoy the Beyond Awesome experience.</en>
+    </text>
+    <text id="title">
+        <zh>啟動您的Balight</zh>
+        <en> Power on your Balight</en>
+    </text>
+    <text id="step1">
+        <zh>步驟一：請確認您的鋰電池是否已經充飽電，並且在良好的狀態。電池上的藍色LED燈會顯示即時的電量。</zh>
+        <en>Step 1 – Check that the battery is charged full and in good condition.
+ The blue LEDs will indicate the battery level.</en>
+    </text>
+    <text id="step2">
+        <zh>步驟二：請將鋰電池安裝到Balight上。（務必要聽到清脆的＂咔＂聲才代表有穩固安裝）</zh>
+        <en>Step 2 – Install the battery on your Balight.</en>
+    </text>
+    <text id="step3">
+        <zh>步驟三：按下開關開啟Balight，開機時請靜止幾秒，此時正在水平校正，LED燈熄滅後即可開始騎動。</zh>
+        <en>Step 3 – Press and hold the Power Button until the LED turns on. The LED should light up in 5 seconds. If the LED is not on, contact support at support@balight.com.</en>
+    </text>
+    <text id="connect">
+        <zh>連接您的Balight</zh>
+        <en>Connect your Balight to your Balight App</en>
+    </text>
+    <text id="install1">
+        <zh>步驟一：請在您的手機上安裝Balight APP。您可以在App Store、Google Play Store或Balight官方網站上，下載到iOS或Android版本的APP。</zh>
+        <en>Step 1 – Install the Balight App onto your smartphone. For iOS users, you can download it by searching Balight in the App Store.</en>
+    </text>
+    <text id="android">
+        <zh></zh>
+        <en>For Android users, you can download it by searching Balight in the Google Play Store.</en>
+    </text>
+    <text id="install2">
+        <zh>步驟二：打開Balight APP。</zh>
+        <en>Step 2 – Open the Balight App. A brief introduction of the APP features will be presented to you.</en>
+    </text>        
+    <text id="install3">
+        <zh>步驟三：進入後請允許APP開啟您手機的藍芽功能。</zh>
+        <en>Step 3 – Click the “Open” button to enter the APP. Please allow the APP to use your device’s Bluetooth.</en>
+    </text>     
+    <text id="installApp">
+        <zh></zh>
+        <en>Please also allow the APP to access your location to enable the cycling features.</en>
+    </text>     
+    <text id="install4">
+        <zh>步驟四：請確認您手機的藍芽功能已經開啟，點選畫面中的腳踏車圖示。</zh>
+        <en>Step 4 – Make sure your Bluetooth on your smartphone is turned on. To connect the app to your Balight, click on the wheels on the bicycle diagram.</en>
+    </text>    
+    <text id="installClick">
+        <zh>（點選前輪圖示將進行前輪的藍芽連線配對，相同的，點選後輪圖示可以進行後輪的藍芽連線配對）</zh>
+        <en>(Clicking on the front wheel of the diagram will pair your Balight on front wheel and the same with the rear wheel)</en>
+    </text>     
+    <text id="install5">
+        <zh>步驟五：長按Balight上的開關直到LED燈軸呈現三段三色的藍芽模式。</zh>
+        <en>Step 5 –Press and hold the power button for 5 seconds until the 4 LED strips light up.</en>
+    </text>     
+    <text id="installLED">
+        <zh>三段三色：Balight燈軸將隨機變成紅、綠、藍或無色的色彩組合，表示產品進入藍芽連線模式。您需要點選APP，讓畫面中的燈軸色彩和產品上一致。</zh>
+        <en>You will see the LEDs light up with three color bands in Red, Green, Blue or Black. On the APP, match the color combination.</en>
+    </text>     
+    <text id="install6">
+        <zh>步驟六：按「下一步」確認，如果配對成功，Balight的ID編號將會出現在APP畫面中。</zh>
+        <en>Step 6 – Press “Next” to confirm. If colors are matched properly, a Balight ID will appear in the App. </en>
+    </text>     
+    <text id="installID">
+        <zh>如果Balight ID沒有出現，請回到上一步再試一次。</zh>
+        <en>If the Balight ID does not appear, repeat step 5. When the Balight ID has appeared, click “Sync” to finish the pairing process.</en>
+    </text>     
+    <text id="install7">
+        <zh>步驟七：完成配對後，系統會自動記錄您的Balight，下次使用無須再次連線。（除非您有清除Balight裝置）</zh>
+        <en>Step 7 – After the pairing process is finished, you will not need to pair your Balight again (If you do not delete the device).</en>
+    </text> 
+    <text id="playPic">
+        <zh>開始玩圖</zh>
+        <en>Play Pictures on your Balight</en>
+    </text> 
+    <text id="imgSources">
+        <zh>您可以透過下列四種方式將圖片傳送至Balight上：
+一、下載雲端圖庫的圖檔（登入帳號後方能使用）。
+二、從您的手機相簿匯入。
+三、使用您的手機現拍現傳。
+DIY繪製圖形。</zh>
+        <en>You have the four sources add to your collection of pictures to play on your Balight. You may download images from the cloud (it requires you to register), import from your phone, take pictures with your smartphone camera or create new pictures using the DIY function.</en>
+    </text> 
+    <text id="image1">
+        <zh>步驟一：從主畫面中選擇想要播放的圖案，如果想要新增圖片，點選「＋」以新增。</zh>
+        <en>Step 1 –Select images from the collection of pictures. If you want to add to your collection of pictures, press the ADD button.</en>
+    </text> 
+    <text id="image2">
+        <zh>步驟二：點選「播放」，此時圖片將會傳送到Balight中，請耐心等待圖片傳輸完成。</zh>
+        <en>Step 2 –Click the “Send” button and the App will send the pictures to the Balight.</en>
+    </text> 
+    <text id="cycling">
+        <zh>騎行數據</zh>
+        <en> Cycling Data</en>
+    </text> 
+    <text id="track">
+        <zh>Balight APP同時具有騎車數據記錄的功能，點選畫面中「騎行」分頁，您將會看到許多資訊，例如電池電量、目前速度、騎車距離、騎車時間…等，都可以透過GPS來做追蹤計算。</zh>
+        <en> The Balight App also features a useful way of tracking your cycling data. Select the second option of the bottom function lane. From here, you will see useful information like the remaining battery of your Balight, your current cycling speed, distance, time, and max speed. You can even record your bike route by clicking the GPS button. Keep track of all of this in real time.</en>
+    </text> 
+    <text id="cloud">
+        <zh>雲端圖庫（註冊後可以使用）</zh>
+        <en> Cloud (Require registration)</en>
+    </text> 
+    <text id="cloudFeature">
+        <zh>Balight內建雲端圖庫提供豐富的玩圖素材，透過網路連線點選「＋」的「雲庫」即可查看下載最新圖形。雲端圖庫將不定期更新。</zh>
+        <en>The Balight Cloud feature is where you can download additional images for your Balight. Press the ADD button on your home screen and select “Cloud.” Our Cloud Image Gallery, will be updated regularly so feel free to check in every now and then for new images.</en>
+    </text> 
+    <text id="diy">
+        <zh>DIY</zh>
+        <en>DIY</en>
+    </text> 
+    <text id="diyDetail">
+        <zh>「Do it Yourself」是Balight的一大特色，您可以透過這個功能去創造設計新的圖示，或者修改加工您現有的圖片。</zh>
+        <en> DIY “Do it Yourself” is the Balight option for creating your own images for your Balight. If you like to add your own touch to things, this is where you will have the ability to design your images, either from scratch, taking a photo with your camera, or importing a photo from your photo library.</en>
+    </text> 
+    <text id="setting">
+        <zh>設定</zh>
+        <en>Setting Options</en>
+    </text> 
+    <text id="settingthrid">
+        <zh>您可以透過主畫面中第三個分頁的「設定」來調整相關的功能。</zh>
+        <en>The third option of the button function lane is settings. You may manage your Balight features from here.</en>
+    </text> 
+    <text id="brightness">
+        <zh>圖片亮度：滑動拉桿來調整圖片顯示的亮度。</zh>
+        <en> Photo Brightness – Slide to set your desired brightness level.</en>
+    </text> 
+    <text id="interval">
+        <zh>播放間隔：如您選取一張以上的圖片播放，可以透過本功能調整圖片播放的時間間隔。</zh>
+        <en>Play Interval – If you are playing multiple images on your Balight device, you can set up the duration of images played. </en>
+    </text> 
+    <text id="sleep">
+        <zh>設備休眠：您可以設定Balight進入休眠的時間。</zh>
+        <en> Device Sleep – This option allows you to set how long your Balight device will remain active after it disconnects from the app.</en>
+    </text> 
+    <text id="devPic">
+        <zh>設備圖片：您可以查看目前存取在Balight裝置上的圖片列表。</zh>
+        <en> Device Picture  – This option allows you to see the current playing pictures on your Balight.</en>
+    </text> 
+    <text id="reverse">
+        <zh>反轉圖片：可以透過此功能水平翻轉您的圖片。</zh>
+        <en>Reverse Display – This option allows you to reverse the display of your Balight pictures.</en>
+    </text> 
+    <text id="select">
+        <zh>設備型號：點選以設定您目前使用的Balight型號。</zh>
+        <en>Select Mode – This option allows you to select corresponding version of your Balight.</en>
+    </text> 
+    <text id="powerOff">
+        <zh>關閉您的Balight</zh>
+        <en>Power off your Balight device</en>
+    </text> 
+    <text id="devPowerOff">
+        <zh>長按開關直至LED燈熄滅即成功關閉。</zh>
+        <en> To power off your Balight device, hold down the power button for about 10 seconds and your display will power off.</en>
+    </text> 
+    <text id="course">
+        <zh>Balight 魔光輪Elite 100秒安裝教學</zh>
+        <en></en>
+    </text>
+    <text id="course1">
+        <zh> Balight 風光輪Super 100秒安裝教學</zh>
+        <en></en>
+    </text>
+</content>
+    

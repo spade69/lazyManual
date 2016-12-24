@@ -1,3 +1,6 @@
+/**
+ * Mainly adated to Mobile!
+ */
 //lazyload and
 function select(){
     var selectx=document.getElementById('language');
@@ -5,17 +8,12 @@ function select(){
     var param=selectx.options[selectedIndex].value.toUpperCase();
     var imgs=document.getElementsByTagName('img');
     for(var i=0;i<imgs.length;i++){
-        console.log(imgs[i].src);
+        //console.log(imgs[i].src);
         var arr=imgs[i].src.split('/');
-        console.log(arr[arr.length-1]);
+       // console.log(arr[arr.length-1]);
         imgs[i].src=param+'/'+arr[arr.length-1];
     }
 }
-
-function lazyLoad(){
-    
-}
-
 
 function createOptions(url,selectx){
     $.get(url,function(data){

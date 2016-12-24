@@ -1,0 +1,62 @@
+body{
+margin:0px;
+padding:0px;
+padding-left:30px;
+border:0px;
+width:100%;
+}
+
+html{
+width:100%;
+overflow-x:hidden;
+}
+
+#head{
+    font-size: 130%;
+    color: #000080;
+    text-align:center;
+}
+
+.mid1{
+font-size:110%;
+}
+
+#tips{
+    font-size:120%;
+    
+}
+
+
+
+.title{
+font-size:120%;
+color:#0066FF;
+}
+
+.imgx{
+width:200px;
+height:350px;
+
+
+ 
+}
+.imgex{
+ position: relative; left: 25%; top: 50%;
+}
+
+.imgey{
+ position: relative; left: 10%; top: 50%;
+}
+
+#icon{
+    position: relative; left: 40%; top: 50%;
+ 
+}
+
+.ui-li-desc{
+    white-space:normal;
+}
+
+.manual{
+    padding: 5px 0;
+}

@@ -1,9 +1,11 @@
 //entry.js
-var app=require('./module.js'); //必须使用./ 这种path
+ //必须使用./ 这种path
 var domSP=require('./domSizePosition.js');
+var lazy=require('./lazyLoad');
 require('../style.css');
 document.write('It works');
-app.work();
+
+var lazy=new lazy.Lazy('diff');
 
 //onload != domReady  !!!! onload是包括图片其他文件加载完成之后。
 //domReady仅仅是文档
@@ -20,10 +22,8 @@ window.onload=function(){
     console.log('size of view',view.height,view.width);
     console.log(rect);
     
-    window.onscroll=function(){
-        if(domSP.checkScroll(document.body,'diff',window)){
-            //alert('ok!');
-        }
-    }
-    
+    //lazy.lazyLoad()
+    var arrSrc=lazy.storeSrc();
+    console.log(arrSrc);
+    lazy.clearSrc(arrSrc,window);
 }

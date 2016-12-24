@@ -128,20 +128,20 @@ function getScrollOffsets(w){
 }
 
 /*Example for scroll  implementation your detecting algorithm*/
-function checkScroll(element,box,window){
-    //最后一张图片距离顶部的距离+该元素一半的高度 lastBoxH
-    //var oBoxs=getByClass(element,box);//获取所有匹配这个样式名的子元素
-    if(document.getElementsByClassName){
-        var oBoxs=element.getElementsByClassName(box);
-    }
-    var ele=getElementPosSize(oBoxs[oBoxs.length-1]);
+function checkScroll(element,window){//check this ele
+    //一张图片距离顶部的距离+该元素一半的高度 lastBoxH
+    var ele=getElementPosSize(element);
     var lastBoxH=ele.top+Math.floor(ele.height/2);
     var lastBoxW=ele.left+Math.floor(ele.width/2);
     var view=getViewport(window);//view.width, view.height
     var scrollSize=getScrollOffsets(window);//scrollSize.x scroll.y
 
+    console.log(lastBoxW,view.width,scrollSize.left)
+
     return (lastBoxH<scrollSize.top+view.height)&&(lastBoxW<view.width+scrollSize.left);
 }
+
+
 
 module.exports={
     getBoundingClientRect:getBoundingClientRect,

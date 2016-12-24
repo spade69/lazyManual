@@ -45,11 +45,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	//entry.js
-	var app=__webpack_require__(1); //必须使用./ 这种path
+	 //必须使用./ 这种path
 	var domSP=__webpack_require__(2);
-	__webpack_require__(3);
+	var lazy=__webpack_require__(3);
+	__webpack_require__(4);
 	document.write('It works');
-	app.work();
+
+	var lazy=new lazy.Lazy('diff');
 
 	//onload != domReady  !!!! onload是包括图片其他文件加载完成之后。
 	//domReady仅仅是文档
@@ -66,31 +68,15 @@
 	    console.log('size of view',view.height,view.width);
 	    console.log(rect);
 	    
-	    window.onscroll=function(){
-	        if(domSP.checkScroll(document.body,'diff',window)){
-	            //alert('ok!');
-	        }
-	    }
-	    
+	    //lazy.lazyLoad()
+	    var arrSrc=lazy.storeSrc();
+	    console.log(arrSrc);
+	    lazy.clearSrc(arrSrc,window);
 	}
 
 
 /***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	//module.js
-	function work(){
-	    console.log('oooookkkkkkk');
-	}
-	module.exports={
-	    work:work
-	};
-
-
-
-
-/***/ },
+/* 1 */,
 /* 2 */
 /***/ function(module, exports) {
 
@@ -224,20 +210,20 @@
 	}
 
 	/*Example for scroll  implementation your detecting algorithm*/
-	function checkScroll(element,box,window){
-	    //最后一张图片距离顶部的距离+该元素一半的高度 lastBoxH
-	    //var oBoxs=getByClass(element,box);//获取所有匹配这个样式名的子元素
-	    if(document.getElementsByClassName){
-	        var oBoxs=element.getElementsByClassName(box);
-	    }
-	    var ele=getElementPosSize(oBoxs[oBoxs.length-1]);
+	function checkScroll(element,window){//check this ele
+	    //一张图片距离顶部的距离+该元素一半的高度 lastBoxH
+	    var ele=getElementPosSize(element);
 	    var lastBoxH=ele.top+Math.floor(ele.height/2);
 	    var lastBoxW=ele.left+Math.floor(ele.width/2);
 	    var view=getViewport(window);//view.width, view.height
 	    var scrollSize=getScrollOffsets(window);//scrollSize.x scroll.y
 
+	    console.log(lastBoxW,view.width,scrollSize.left)
+
 	    return (lastBoxH<scrollSize.top+view.height)&&(lastBoxW<view.width+scrollSize.left);
 	}
+
+
 
 	module.exports={
 	    getBoundingClientRect:getBoundingClientRect,
@@ -251,13 +237,65 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var dom=__webpack_require__(2);
+
+	function Lazy(box){
+	    this.oBoxs=document.getElementsByClassName(box)||document.getElementsByTagName('img');
+	}
+
+	Lazy.prototype={
+	    lazyLoad:function(arr,window){ //box -- 'diff'
+	        //var oBoxs=getByClass(element,box);//获取所有匹配这个样式名的子元素
+	        var oBoxs=this.oBoxs;
+	        window.onscroll=function(arr){
+	            oBoxs.forEach( function(item, index) {
+	                // statements
+	                if(dom.checkScroll(item,window)){
+	                    item.src=arr[index];
+	                }
+	            });
+
+	        }
+	    },
+	    clearSrc:function(box){
+	        if(box){
+	            var imgs=document.getElementsByClassName(box);
+	        }else{
+	            var imgs=document.getElementsByTagName('img');
+	        }
+	        for(var i=0;i<imgs.length;i++){
+	            imgs[i].src=' ';
+	        }
+	    },
+	    storeSrc:function(){
+	        var arr=[];
+	        var imgs=this.oBoxs;
+	        for(var i=0;i<imgs.length;i++){
+	            arr.push(imgs[i].src);
+
+	        }
+	        return arr;
+	    }
+	}
+
+
+
+	module.exports={
+	    Lazy:Lazy
+	}
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -274,10 +312,10 @@
 	}
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 
 
@@ -288,7 +326,7 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/*
@@ -344,7 +382,7 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
