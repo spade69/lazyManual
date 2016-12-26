@@ -7,8 +7,11 @@
  * 
  
 --------------------------------------------------------------------------------------------------------- */
-var  lazy=require('./lazyLoad');
+var lazy=require('./lazyLoad');
+var lazy=new lazy.Lazy();
 
+var arr=lazy.storeSrc();
+console.log(arr);
 
 (function($){
     

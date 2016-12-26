@@ -1,83 +1,51 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
+webpackJsonp([0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//entry.js
-	var app=__webpack_require__(1); //必须使用./ 这种path
-	__webpack_require__(2);
+	 //必须使用./ 这种path
+	var domSP=__webpack_require__(1);
+	var lazy=__webpack_require__(2);
+	__webpack_require__(3);
 	document.write('It works');
-	//document.write();
-	app.work();
 
+	var lazy=new lazy.Lazy('diff');
 
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
+	//onload != domReady  !!!! onload是包括图片其他文件加载完成之后。
+	//domReady仅仅是文档
+	window.onload=function(){
+	    var selectbox=document.getElementById('language');
+	    
+	    var  view=domSP.getViewport(window);
+	    var rect=domSP.getBoundingClientRect(selectbox);
+	    var pos=domSP.getElementPosSize(selectbox);
+	    var offsets=domSP.getScrollOffsets(window);
 
-	//module.js
-	function work(){
-	    console.log('oooookkkkkkk');
+	    console.log('Offset: ',offsets.left,offsets.top);
+	    console.log('selectbox position',pos.left,pos.top,pos.width,pos.height);
+	    console.log('size of view',view.height,view.width);
+	    console.log(rect);
+	    
+	    //lazy.lazyLoad()
+	    var arrSrc=lazy.storeSrc();
+	    console.log(arrSrc);
+	    lazy.clearSrc(arrSrc,window);
 	}
-	module.exports={
-	    work:work
-	};
-
-
 
 
 /***/ },
-/* 2 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -94,10 +62,10 @@
 	}
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
@@ -108,7 +76,7 @@
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -164,7 +132,7 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -416,4 +384,4 @@
 
 
 /***/ }
-/******/ ]);
+]);
