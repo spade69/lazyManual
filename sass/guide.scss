@@ -1,14 +1,16 @@
+
 body{
-margin:0px;
-padding:0px;
-padding-left:30px;
-border:0px;
-width:100%;
+    margin:0px;
+    padding:0px {
+        left:30px;
+    }
+    border:0px;
+    width:100%;
 }
 
 html{
-width:100%;
-overflow-x:hidden;
+    width:100%;
+    overflow-x:hidden;
 }
 
 #head{
@@ -29,28 +31,27 @@ font-size:110%;
 
 
 .title{
-font-size:120%;
-color:#0066FF;
+    font-size:120%;
+    color:#0066FF;
 }
 
 .imgx{
-width:200px;
-height:350px;
-
-
+    width:200px;
+    height:350px;
  
 }
 .imgex{
- position: relative; left: 25%; top: 50%;
+ position: relative; 
+ left: 25%; top: 50%;
 }
 
 .imgey{
- position: relative; left: 10%; top: 50%;
+    position: relative; 
+    left: 10%; top: 50%;
 }
 
 #icon{
     position: relative; left: 40%; top: 50%;
- 
 }
 
 .ui-li-desc{

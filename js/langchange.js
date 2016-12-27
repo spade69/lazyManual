@@ -46,34 +46,9 @@ console.log(arr);
     };
     
 })(jQuery);
-    function createOptionsNative(selectbox,text){
-            var newOption=new Option(text,text);
-            selectbox.options.add(newOption);
-            // var option=document.createElement('option');
-            // selectbox.appendChild(option);
-            // option.text=text;
-            // option.value=text;
-     }
 
-    function createOptions(selectx){
-        //var selectx=$('#language');
-        $.get('lang_Content.xml',function(data){
-            var xml=$(data);
-            var selectbox=document.getElementById('language');
-            xml.find('type').children().each(function(){
-                var text=$(this).text();
-                //selectx.append('<option value="'+text+'">'+text+'</option>');
-                createOptionsNative(selectbox,text);
-            });
-            $('#language')[0].selectedIndex=1;
-            //$('#language option:last-child')[0].selected=true;
-        });
-    }
-    var selectx=$('#language');
-    createOptions(selectx);
-$(document).ready(function(){
-
-
+//$(document).ready(function(){...})
+$(function(){
     $('#language').on('change',function(){
         var value=$('#language').val();
         //console.log(value);

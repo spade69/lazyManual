@@ -124,11 +124,19 @@ xmldom.onreadystatechange=function(){
     }
 };
 
-xmldom.load('lang_Content.xml');
+/*xmldom.load('lang_Content.xml');
 
 //解析XML的用法！必须放在一个try-catch语句中 以防发生错误
 try{
     xmldom=parseXml("<root><child/></root>");
 }catch(ex){
     alert(ex.message);
+}*/
+
+module.exports={
+    serializeXML:serializeXML,
+    createDocument:createDocument,
+    parsingXML:parsingXML,
+    detectParseError:detectParseError,
+    createAndLoad:createAndLoad
 }

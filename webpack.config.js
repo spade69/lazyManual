@@ -1,4 +1,5 @@
 var webpack=require('webpack');
+var path=require('path');
 var commonsPlugin=new webpack.optimize.CommonsChunkPlugin({
     filename:"common.js",
     name:"commons"
@@ -9,7 +10,7 @@ module.exports={
         pageB:'./js/entryB.js'
     },
     output:{
-        path:path.join(__dirname,"js"),
+        path:path.join(__dirname,"dist"),
         filename:"[name].bundle.js",
         chunkFilename:"[id].chunk.js"
     },

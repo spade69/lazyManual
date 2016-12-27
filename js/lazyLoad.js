@@ -15,7 +15,6 @@ Lazy.prototype={
                     item.src=arr[index];
                 }
             });
-
         }
     },
     clearSrc:function(box){
@@ -32,10 +31,22 @@ Lazy.prototype={
         var arr=[];
         var imgs=this.oBoxs;
         for(var i=0;i<imgs.length;i++){
-            arr.push(imgs[i].src);
+            var srcArr=imgs[i].src.split('/');
+            arr.push(srcArr[srcArr.length-1]);
 
         }
         return arr;
+    },
+    setSrc:function(path,arr){
+        var oBoxs=[];
+        oBoxs=this.oBoxs;
+        console.log(oBoxs);
+        for(var i=0;i<oBoxs.length;i++){
+            oBoxs[i].src=path+'/'+arr[i];
+        }
+   /*     oBoxs.forEach(function(item,index){
+            item.src=path+'/'+arr[index];
+        });*/
     }
 }
 
