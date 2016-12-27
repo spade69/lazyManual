@@ -102,7 +102,7 @@ webpackJsonp([1],{
 	            xml.find('type').children().each(function(){
 	                var text=$(this).text();
 	                //selectx.append('<option value="'+text+'">'+text+'</option>');
-	                createOptionsNative(selectbox,text);
+	                this.createOptionsNative(selectbox,text);
 	            });
 	            $('#language')[0].selectedIndex=1;
 	            //$('#language option:last-child')[0].selected=true;
