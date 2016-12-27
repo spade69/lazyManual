@@ -96,13 +96,14 @@ webpackJsonp([1],{
 	    },
 	    createOptions:function(selectx){
 	        //var selectx=$('#language');
+	        var self=this;
 	        $.get('lang_Content.xml',function(data){
 	            var xml=$(data);
 	            var selectbox=document.getElementById('language');
 	            xml.find('type').children().each(function(){
 	                var text=$(this).text();
 	                //selectx.append('<option value="'+text+'">'+text+'</option>');
-	                this.createOptionsNative(selectbox,text);
+	                self.createOptionsNative(selectbox,text);
 	            });
 	            $('#language')[0].selectedIndex=1;
 	            //$('#language option:last-child')[0].selected=true;
