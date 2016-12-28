@@ -1,0 +1,21 @@
+var gulp=require('gulp'),
+    sass=require('gulp-ruby-sass'),
+    rename=require('gulp-rename'),
+    livereload = require('gulp-livereload'),
+    concat = require('gulp-concat'),
+    cssnano = require('gulp-cssnano'),
+    autoprefixer=require('gulp-autoprefixer');
+
+gulp.task('styles', function() {
+    return sass('sass/*.scss', {
+            style: 'expanded'
+        })
+        .pipe(autoprefixer({
+            browsers: ['Firefox>=4', 'Opera>=10', 'Android>=4.0'],
+            cascade: true, //是否美化属性值 默认：true
+            remove: true //去掉不必要的前缀
+        }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist'));
+
+});

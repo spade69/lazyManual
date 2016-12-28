@@ -16,7 +16,7 @@ $(function(){
 /*
 usage: serializeXML(document.documentElement);//传入文档元素，这也是一个DOM
 序列化XML，把DOM序列化成XML字符串
- */
+ */ 
 function serializeXML(xmldom){  
     if(typeof XMLSerializer!='undefined'){
         var serilizer=new XMLSerializer(xmldom);

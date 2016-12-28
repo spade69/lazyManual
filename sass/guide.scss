@@ -1,4 +1,21 @@
 
+@mixin link-colors(
+        $normal,
+        $visited:$normal,
+        $hover:$normal
+    )
+{
+    &:link{color:$normal;}
+    &:visited{color:$visited;}
+    &:hover{color:$hover;}
+}
+
+@mixin ele-colors($focus,$hover,$active){
+    &:focus{color:$focus;}  
+    &:hover{color:$hover;}
+    &:active{color:$active;}
+}
+
 body{
     margin:0px;
     padding:0px {
@@ -8,10 +25,19 @@ body{
     width:100%;
 }
 
+a{
+    @include link-colors(
+        $normal:blue,
+        $visited:red,
+        $hover:green);
+}
+
 html{
     width:100%;
     overflow-x:hidden;
 }
+
+
 
 #head{
     font-size: 130%;

@@ -66,6 +66,8 @@ webpackJsonp([1],{
 
 	/**
 	 * Mainly adated to Mobile!
+	 * Usage :  for select option 
+	 * *(Language)
 	 */
 
 	function Select(selectId,url){
@@ -87,15 +89,15 @@ webpackJsonp([1],{
 	        }
 	    },
 	    createOptionsNative:function(selectbox,text){
+	        //1)
 	        var newOption=new Option(text,text);
 	        selectbox.options.add(newOption);
-	        // var option=document.createElement('option');
+	        // 2) var option=document.createElement('option');
 	        // selectbox.appendChild(option);
 	        // option.text=text;
 	        // option.value=text;       
 	    },
 	    createOptions:function(selectx){
-	        //var selectx=$('#language');
 	        var self=this;
 	        $.get('lang_Content.xml',function(data){
 	            var xml=$(data);
