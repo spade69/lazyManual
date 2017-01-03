@@ -16,6 +16,59 @@
     &:active{color:$active;}
 }
 
+$color-stack:
+    (group:orange,id:normal,color:#e67835),
+    (group:orange,id:pale,color:#f8a878),
+    (group:orange,id:dark,color:#ad490c),
+    (group:blue,id:normal,color:#426682);
+
+//color function
+//group means 
+//id unique 
+//color value 
+@function color($group,$shade:normal,$transparency:1){
+    @each $color in $color-stack{
+        $c-group:map-get($color,group);
+        $c-shade:map-get($color,id);
+        @if($group==map-get($color,group) and $shade==map-get($color,id)){
+            @return rgba(map-get($color,color),$transparency);
+        }
+    }
+}
+
+//group :font-family's name  eg:brandon serif  clarendon
+//id font's unique name 
+//font: font-family or 
+//weight: font-weight
+//style : font-style
+$font-stack:
+    (group:brandon,id:light,font('Brandon Grot W01 Light',sans-serif),weight:200,style:normal),
+    (group:brandon,id:light-italic,font('Brandon Grot W01 Light',sans-serif),
+        weight:200,style:italic),
+    (group:brandon,id:regular,font:('Brandon Grot W01-Regular',sans-serif),
+        weight:400,style:normal),
+    (group:brandon,id:regular-italic,font('Brandon Grot W01-Regular',sans-serif),
+        weight:400,style:italic)
+    (group: brandon, id: bold, font: ('Brandon Grot W01 Black',sans-serif), 
+        weight: 700, style: normal),
+    (group: brandon, id: bold-italic, font: ('Brandon Grot W01-Regular', sans-serif), 
+        weight: 400, style: italic),
+    (group: clarendon, id: regular, font: ('Clarendon LT W01', serif), 
+        weight: 200, style: normal),
+    (group: code, id: regular, font: (monospace), weight: 400, style: normal);
+
+//breakpoint Mixin
+@mixin font($group,$id:regular){ //default value is regular
+    @each $font in $font-stack{
+        @if($group==map-get($font,group) and $id==map-get($font,id)){
+            font-family:map-get($font,font);
+            font-weight:map-get($font,weight);
+            font-style:map-get($font,style);
+        }
+    }
+}
+
+
 body{
     margin:0px;
     padding:0px {
@@ -37,8 +90,20 @@ html{
     overflow-x:hidden;
 }
 
+body{font-family:serif;}
 
+h1,h2,h3,h4{
+    @include font(brandon,light-italic);
+}
+code,pre,tt,span.input{font-family:monospace;}
+p{
+    font-family:Times,TimesNR,'New Century Schoolbook',Georgia,'New York',serif;
+    font-style:italic;
+}
 
+.myFont{
+    font-variant:small-caps;
+}
 #head{
     font-size: 130%;
     color: #000080;
