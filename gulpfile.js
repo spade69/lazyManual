@@ -19,3 +19,8 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('dist'));
 
 });
+
+gulp.task('watch',function(){
+    //watch scss
+    gulp.watch('sass/*.scss',['styles']);
+});

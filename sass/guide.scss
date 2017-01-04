@@ -42,14 +42,15 @@ $color-stack:
 //weight: font-weight
 //style : font-style
 $font-stack:
-    (group:brandon,id:light,font('Brandon Grot W01 Light',sans-serif),weight:200,style:normal),
-    (group:brandon,id:light-italic,font('Brandon Grot W01 Light',sans-serif),
+    (group:brandon,id:light,font:('Brandon Grot W01 Light',sans-serif),
+        weight:200,style:normal),
+    (group:brandon,id:light-italic,font:('Brandon Grot W01 Light',sans-serif),
         weight:200,style:italic),
     (group:brandon,id:regular,font:('Brandon Grot W01-Regular',sans-serif),
         weight:400,style:normal),
-    (group:brandon,id:regular-italic,font('Brandon Grot W01-Regular',sans-serif),
-        weight:400,style:italic)
-    (group: brandon, id: bold, font: ('Brandon Grot W01 Black',sans-serif), 
+    (group:brandon,id:regular-italic,font:('Brandon Grot W01-Regular',sans-serif),
+        weight:400,style:italic),
+    (group: brandon, id: bold, font:('Brandon Grot W01 Black',sans-serif), 
         weight: 700, style: normal),
     (group: brandon, id: bold-italic, font: ('Brandon Grot W01-Regular', sans-serif), 
         weight: 400, style: italic),
@@ -59,7 +60,7 @@ $font-stack:
 
 //breakpoint Mixin
 @mixin font($group,$id:regular){ //default value is regular
-    @each $font in $font-stack{
+    @each $font in $font-stack {
         @if($group==map-get($font,group) and $id==map-get($font,id)){
             font-family:map-get($font,font);
             font-weight:map-get($font,weight);
@@ -67,7 +68,6 @@ $font-stack:
         }
     }
 }
-
 
 body{
     margin:0px;
@@ -102,7 +102,11 @@ p{
 }
 
 .myFont{
-    font-variant:small-caps;
+    font:normal small-caps 900 monospace;
+    //text-indent:-4em;
+    padding-left:4em;
+    text-align:justify;
+    
 }
 #head{
     font-size: 130%;
