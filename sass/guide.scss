@@ -101,13 +101,30 @@ p{
     font-style:italic;
 }
 
+.test{
+    width:400px;
+    background-color:silver;
+    padding:10px;
+    margin:{
+        top:10px;
+        bottom:10px;
+    }
+    border:1px solid;
+}
 .myFont{
     font:normal small-caps 900 monospace;
-    //text-indent:-4em;
-    padding-left:4em;
+    text-indent:4em;
+    //padding-left:4em;
     text-align:justify;
-    
+    margin:{
+        left:10px;
+        right:10px;
+        top:0;
+        bottom:-50px;
+    }
+
 }
+
 #head{
     font-size: 130%;
     color: #000080;
