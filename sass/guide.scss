@@ -74,8 +74,10 @@ body{
     padding:0px {
         left:30px;
     }
+    font-family:serif;
     border:0px;
     width:100%;
+    line-height:1.5; 
 }
 
 a{
@@ -90,7 +92,6 @@ html{
     overflow-x:hidden;
 }
 
-body{font-family:serif;}
 
 h1,h2,h3,h4{
     @include font(brandon,light-italic);
@@ -100,6 +101,8 @@ p{
     font-family:Times,TimesNR,'New Century Schoolbook',Georgia,'New York',serif;
     font-style:italic;
 }
+
+
 
 .test{
     width:400px;
@@ -123,6 +126,23 @@ p{
         bottom:-50px;
     }
 
+}
+
+p span{
+    color:red;
+    padding:{
+        top:10px;
+    }
+    margin:{
+        top:25px;
+        bottom:50px;
+        left:25px;
+    }
+    border:{
+        style:solid dashed double dotted;
+        color:black gray red;
+        left:25px double gray;
+    }
 }
 
 #head{
