@@ -22,6 +22,20 @@ $color-stack:
     (group:orange,id:dark,color:#ad490c),
     (group:blue,id:normal,color:#426682);
 
+$color-warn:(   
+    danger:red,
+    medium:green,
+    mild:#666,
+    fff:#fff
+    );
+
+@function getColor($item){
+    @if not map-has-key($color-warn,$item){
+        @warn "No color found for '#{$color}' in $color-warn map. Property omitted.";
+    }
+    @return map-get($color-warn,$item);
+}
+
 //color function
 //group means 
 //id unique 
@@ -69,6 +83,15 @@ $font-stack:
     }
 }
 
+.warn{
+    color:getColor(danger);
+}
+
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+
 body{
     margin:0px;
     padding:0px {
@@ -78,6 +101,7 @@ body{
     border:0px;
     width:100%;
     line-height:1.5; 
+
 }
 
 a{
@@ -87,10 +111,7 @@ a{
         $hover:green);
 }
 
-html{
-    width:100%;
-    overflow-x:hidden;
-}
+
 
 
 h1,h2,h3,h4{
@@ -106,7 +127,12 @@ p{
 
 .test{
     width:400px;
-    background-color:silver;
+    background:{
+        image:url(../imgs/bgimg.jpg);
+        color:silver;
+        repeat:no-repeat;
+        position:left top;
+    }
     padding:10px;
     margin:{
         top:10px;
