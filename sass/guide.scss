@@ -83,6 +83,53 @@ $font-stack:
     }
 }
 
+//float 
+@mixin float($side:left){//default left
+    float:unquote($side);
+    @if $legacy-support-for-ie {//ie 6
+        _display:inline;
+    }
+}
+//left float
+@mixin pull-left{
+    @include float(left);
+}
+
+//for extend
+%pull-right{
+    @include float(left);
+}
+
+@mixin pull-right{
+    @include float(right);
+}
+
+%pull-right{
+    @include float(right);
+}
+
+//reset float 
+@mixin reset-float($display:block){
+    float:none;
+    display:$display;//reset display also
+}
+/**
+ *usage
+ *
+ .col{
+    @extend %pull-right;
+ }
+ .aside{
+    @include pull-right;
+ }
+
+//reset
+.content{
+    @include reset-float(inline);
+}
+
+ */
+
 .warn{
     color:getColor(danger);
 }
@@ -131,7 +178,7 @@ p{
         image:url(../imgs/bgimg.jpg);
         color:silver;
         repeat:no-repeat;
-        position:left top;
+        position:10px 100%;
     }
     padding:10px;
     margin:{
