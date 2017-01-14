@@ -83,6 +83,25 @@ $font-stack:
     }
 }
 
+//media query stack group: 这是媒体查询的组，这有很多个值可以使用，比如 tablet 、 small 和 1400
+//id: 媒体查询唯一标识符。这也是唯一的。如 general 、 inbetween 和 exclude 。默认的组一般为 general
+//rule: 这是你想要的媒体查询的实际规则。其值要用双引号括起来，否则Sass会报错
+$media-stack:
+    (group:tablet,id:general,rule:'only screen and (min-device-width:700px)'),
+    (group:small,id:general,rule:'only screen and (min-device-width:1100px)'),
+    (group:medium,id:inbetween,rule:'only screen and (min-device-width:1100px) and (max-device-width:1400px'),
+    (group:large,id:general,rule:'only screen and (min-device-width:1400px)'),
+    (group:print,id:general,rule:'only print');
+
+@mixin media($group,$id:general){
+    @each $media in $media-stack{
+        @if($group == map-get($media,group) and $id==map-get($media,id)){
+            $rule:map-get($media,rule);
+            @media #($rule) {@content}
+        }
+    }
+}
+
 //float 
 @mixin float($side:left){//default left
     float:unquote($side);
