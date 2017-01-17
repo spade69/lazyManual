@@ -19,19 +19,18 @@ body{
 h4{
     color: #008080;
 }
-img{
-    display: block;
-    margin:0 auto;  
-}
+
 .diff{
     width:450px;
 
 }
-div{
-    padding: 10px 0;
-}
 
-img.sideline{float:left;margin:10px -15px 10px 10px;}
+.relative{
+    position:relative;
+    background-color:red;
+
+}
+img.sideline{position:absolute;top:0;left:0;right:50%;bottom:0;margin:50px;width:200px;overflow: scroll;}
 p.box{border: 1px solid gray;padding:0.5em;}
 p.box strong{border: 3px double black;background: silver;padding: 2px;}
 h2#jump-up{margin-top:-15px;background: silver;}
@@ -42,7 +41,9 @@ h2#jump-up{margin-top:-15px;background: silver;}
 
 <body>
     <div class="container">
+        <div class="relative">
         <img src="imgs/pic1.png" class="sideline">
+        </div>
         <p class="box">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<strong>srtrong text</strong>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         <p>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</p>
         <h2 id="jump-up">A heading!</h2>

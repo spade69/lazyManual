@@ -149,6 +149,17 @@ $media-stack:
 
  */
 
+//position
+@mixin position($type,$vertical,$v1,$horizon,$v2){
+    position:$type;
+    #{$vertical}:$v1;
+    #{$horizon}:$v2;
+}
+//test case
+.test{
+    @include position(absolute,top,50%,left,50%);
+}
+
 .warn{
     color:getColor(danger);
 }
