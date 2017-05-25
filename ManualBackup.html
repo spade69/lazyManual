@@ -24,27 +24,39 @@ h4{
     width:450px;
 
 }
-
+.absolute{
+    position: absolute;
+    background-color:orange;
+    left:60px;
+}
 .relative{
     position:relative;
     background-color:red;
-
+    left:60px;
 }
 img.sideline{position:absolute;top:0;left:0;right:50%;bottom:0;margin:50px;width:200px;overflow: scroll;}
 p.box{border: 1px solid gray;padding:0.5em;}
 p.box strong{border: 3px double black;background: silver;padding: 2px;}
 h2#jump-up{margin-top:-15px;background: silver;}
 
+div#header{position:fixed;top:0;bottom:80%;left:20%;right:0;background:gray;margin-bottom: 2px;color:yellow;}
+div#sidebar{position: fixed;top:0;bottom: 0; left: 0;right: 80%;background: silver;margin-right: 2px;color:maroon;}
+div.container{position: absolute;top:20%;bottom: 0;left: 20%;right:0;overflow: auto;background: white;}
+div#footer{position:fixed;bottom:0;width:100%;height:auto;}
 </style>
 <script type="text/javascript" src="selectLang.js"></script>
 </head>
 
 <body>
+    <div>
+        <div id="header">HEADER FRAME</div>
+        <div id="sidebar">SIDE BAR FRAME</div>
+    </div>
     <div class="container">
         <div class="relative">
         <img src="imgs/pic1.png" class="sideline">
         </div>
-        <p class="box">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<strong>srtrong text</strong>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        <p class="box">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<strong class="absolute">srtrong text</strong>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         <p>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</p>
         <h2 id="jump-up">A heading!</h2>
         <select name="language" id="language" onchange="select()">
@@ -92,6 +104,9 @@ h2#jump-up{margin-top:-15px;background: silver;}
         <img class="diff" src="EN/takoff_balight.png">
         </div>
         </div>
+    </div>
+    <div id="footer">
+        <p>xxxxxxxxxxxxxxxxxxxxxxxx<span style="position: absolute;top:auto;left:auto;">yyyyyyyyyy</span>xxxxxxxx</p>
     </div>
 </body>
 </html>

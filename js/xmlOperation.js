@@ -53,6 +53,7 @@ function createDocument(){
 function parsingXML(xml){
     var xmldom=null;
     if(typeof DOMParser!='undefined'){
+        //使用loadXML 和DOMParser都可以解析
         var parser=new DOMParser()
         xmldom=parser.parseFromString(xml,'text/xml');
           //调用这个方法，不管是文档元素，还是文档元素的子元素都能够找到

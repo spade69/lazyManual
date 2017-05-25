@@ -91,6 +91,7 @@ $media-stack:
     (group:small,id:general,rule:'only screen and (min-device-width:1100px)'),
     (group:medium,id:inbetween,rule:'only screen and (min-device-width:1100px) and (max-device-width:1400px'),
     (group:large,id:general,rule:'only screen and (min-device-width:1400px)'),
+    (group:custom,id:screen,rule:$customRule), //add your own rule!
     (group:print,id:general,rule:'only print');
 
 @mixin media($group,$id:general){
@@ -101,6 +102,15 @@ $media-stack:
         }
     }
 }
+/*usage
+@include media(small,medium){
+    font-size:1.2rem;
+};
+@include media(custom,screen,"(max-device-width:360px)"){
+    color:blue;
+};
+
+ */
 
 //float 
 @mixin float($side:left){//default left
@@ -149,6 +159,14 @@ $media-stack:
 
  */
 
+//abs position 
+@mixin abs-pos($top:auto,$right:auto,$bottom:auto,$left:auto){
+    top:$top;
+    right:$right;
+    left:$left;
+    bottom:$bottom;
+    position:absolute;
+}
 //position
 @mixin position($type,$vertical,$v1,$horizon,$v2){
     position:$type;
